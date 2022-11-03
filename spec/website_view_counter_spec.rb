@@ -4,7 +4,7 @@ require 'website_view_counter'
 
 describe WebsiteViewCounter do
   describe '#views' do
-    subject(:calculate_views) { described_class.calculate_views(logfile: logfile) }
+    subject(:calculate_views) { described_class.new.call(logfile: logfile) }
 
     let(:logfile) { File.read('spec/fixtures/webserver.log') }
     let(:result) do
